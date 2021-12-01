@@ -65,12 +65,12 @@ namespace GeneratePassword
       }
     }
 
-    public static string GenerateSeveralRandomCharacters(int numberOfCharacters)
+    public static string GenerateSeveralRandomCharacters(int numberOfCharacters = 1)
     {
       string result = string.Empty ;
       for (int i = 1  ; i <= numberOfCharacters; i++)
       {
-        result = GenerateOneRandomCharacter();
+        result += GenerateOneRandomCharacter();
       }
 
       return result;
