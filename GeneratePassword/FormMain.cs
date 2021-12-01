@@ -65,31 +65,37 @@ namespace GeneratePassword
       }
     }
 
-    public static string GenerateSeveralRandomCharacters(int numberOfCharacters = 1)
+    public static string GenerateSeveralRandomCharacters(int numberOfCharacters = 1, bool lowercase = true)
     {
-      string result = string.Empty ;
-      for (int i = 1  ; i <= numberOfCharacters; i++)
+      string result = string.Empty;
+      for (int i = 1; i <= numberOfCharacters; i++)
       {
-        result += GenerateOneRandomCharacter();
+        result += GenerateOneRandomCharacter(lowercase);
       }
 
       return result;
     }
 
-    public static string GenerateOneRandomCharacter(bool upperCase = false)
+    public static string ToUpperOrLowercase(string message, bool lowercase = true)
+    {
+      if (lowercase)
+      {
+        message = message.ToLower();
+      }
+      else
+      {
+        message = message.ToUpper();
+      }
+
+      return message;
+    }
+
+    public static string GenerateOneRandomCharacter(bool lowercase = true)
     {
       string result = string.Empty;
       int charNumber = GenerateRandomNumber(65, 65 + 26);
       result = ((char)charNumber).ToString();
-      if (upperCase)
-      {
-        result = result.ToUpper();  
-      }
-      else
-      {
-        result = result.ToLower();
-      }
-
+      result = ToUpperOrLowercase(result, lowercase);
       return result;
     }
 

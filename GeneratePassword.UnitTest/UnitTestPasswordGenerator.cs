@@ -35,5 +35,25 @@ namespace GeneratePassword.UnitTest
       Assert.IsTrue(result.ToLower() == result);
       Assert.IsTrue(result.Length == source);
     }
+
+    [TestMethod]
+    public void TestMethod_Generate_one_character_in_upperCase()
+    {
+      int source = 1;
+      string result = FormMain.GenerateOneRandomCharacter(false);
+      Assert.IsNotNull(result);
+      Assert.IsTrue(result.ToUpper() == result);
+      Assert.IsTrue(result.Length == source);
+    }
+
+    [TestMethod]
+    public void TestMethod_Generate_two_characters_in_upperCase()
+    {
+      int source = 2;
+      string result = FormMain.GenerateSeveralRandomCharacters(source, false);
+      Assert.IsNotNull(result);
+      Assert.IsTrue(result.ToUpper() == result);
+      Assert.IsTrue(result.Length == source);
+    }
   }
 }
