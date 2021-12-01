@@ -59,6 +59,15 @@
       this.rechercherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.àproposdeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.labelPassordLength = new System.Windows.Forms.Label();
+      this.comboBoxPasswordLength = new System.Windows.Forms.ComboBox();
+      this.checkBoxIncludeSymbols = new System.Windows.Forms.CheckBox();
+      this.button1 = new System.Windows.Forms.Button();
+      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.button2 = new System.Windows.Forms.Button();
+      this.labelIncludeSymbols = new System.Windows.Forms.Label();
+      this.label1 = new System.Windows.Forms.Label();
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -298,15 +307,110 @@
       this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
       this.àproposdeToolStripMenuItem.Text = "À &propos de...";
       // 
+      // labelPassordLength
+      // 
+      this.labelPassordLength.AutoSize = true;
+      this.labelPassordLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelPassordLength.Location = new System.Drawing.Point(21, 46);
+      this.labelPassordLength.Name = "labelPassordLength";
+      this.labelPassordLength.Size = new System.Drawing.Size(178, 17);
+      this.labelPassordLength.TabIndex = 1;
+      this.labelPassordLength.Text = "Longeur du mot de passe :";
+      // 
+      // comboBoxPasswordLength
+      // 
+      this.comboBoxPasswordLength.FormattingEnabled = true;
+      this.comboBoxPasswordLength.Location = new System.Drawing.Point(249, 43);
+      this.comboBoxPasswordLength.Name = "comboBoxPasswordLength";
+      this.comboBoxPasswordLength.Size = new System.Drawing.Size(121, 21);
+      this.comboBoxPasswordLength.TabIndex = 2;
+      // 
+      // checkBoxIncludeSymbols
+      // 
+      this.checkBoxIncludeSymbols.AutoSize = true;
+      this.checkBoxIncludeSymbols.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxIncludeSymbols.Location = new System.Drawing.Point(249, 86);
+      this.checkBoxIncludeSymbols.Name = "checkBoxIncludeSymbols";
+      this.checkBoxIncludeSymbols.Size = new System.Drawing.Size(168, 21);
+      this.checkBoxIncludeSymbols.TabIndex = 3;
+      this.checkBoxIncludeSymbols.Text = "( par exemple, @#$%)";
+      this.checkBoxIncludeSymbols.UseVisualStyleBackColor = true;
+      // 
+      // button1
+      // 
+      this.button1.Location = new System.Drawing.Point(249, 245);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(75, 23);
+      this.button1.TabIndex = 4;
+      this.button1.Text = "button1";
+      this.button1.UseVisualStyleBackColor = true;
+      // 
+      // textBox1
+      // 
+      this.textBox1.Location = new System.Drawing.Point(249, 285);
+      this.textBox1.Name = "textBox1";
+      this.textBox1.Size = new System.Drawing.Size(100, 20);
+      this.textBox1.TabIndex = 5;
+      // 
+      // button2
+      // 
+      this.button2.Location = new System.Drawing.Point(249, 334);
+      this.button2.Name = "button2";
+      this.button2.Size = new System.Drawing.Size(75, 23);
+      this.button2.TabIndex = 6;
+      this.button2.Text = "button2";
+      this.button2.UseVisualStyleBackColor = true;
+      // 
+      // labelIncludeSymbols
+      // 
+      this.labelIncludeSymbols.AutoSize = true;
+      this.labelIncludeSymbols.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelIncludeSymbols.Location = new System.Drawing.Point(21, 86);
+      this.labelIncludeSymbols.Name = "labelIncludeSymbols";
+      this.labelIncludeSymbols.Size = new System.Drawing.Size(148, 17);
+      this.labelIncludeSymbols.TabIndex = 7;
+      this.labelIncludeSymbols.Text = "Inclure des symboles :";
+      // 
+      // label1
+      // 
+      this.label1.AutoSize = true;
+      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label1.Location = new System.Drawing.Point(21, 116);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(148, 17);
+      this.label1.TabIndex = 9;
+      this.label1.Text = "Inclure des symboles :";
+      // 
+      // checkBox1
+      // 
+      this.checkBox1.AutoSize = true;
+      this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBox1.Location = new System.Drawing.Point(249, 116);
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.Size = new System.Drawing.Size(168, 21);
+      this.checkBox1.TabIndex = 8;
+      this.checkBox1.Text = "( par exemple, @#$%)";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.label1);
+      this.Controls.Add(this.checkBox1);
+      this.Controls.Add(this.labelIncludeSymbols);
+      this.Controls.Add(this.button2);
+      this.Controls.Add(this.textBox1);
+      this.Controls.Add(this.button1);
+      this.Controls.Add(this.checkBoxIncludeSymbols);
+      this.Controls.Add(this.comboBoxPasswordLength);
+      this.Controls.Add(this.labelPassordLength);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "FormMain";
       this.Text = "Password Generator";
+      this.Load += new System.EventHandler(this.FormMain_Load);
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.ResumeLayout(false);
@@ -346,6 +450,15 @@
     private System.Windows.Forms.ToolStripMenuItem rechercherToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     private System.Windows.Forms.ToolStripMenuItem àproposdeToolStripMenuItem;
+    private System.Windows.Forms.Label labelPassordLength;
+    private System.Windows.Forms.ComboBox comboBoxPasswordLength;
+    private System.Windows.Forms.CheckBox checkBoxIncludeSymbols;
+    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Label labelIncludeSymbols;
+    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.CheckBox checkBox1;
   }
 }
 

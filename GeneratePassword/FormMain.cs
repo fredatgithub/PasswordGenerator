@@ -21,5 +21,25 @@ namespace GeneratePassword
     {
         Application.Exit();
     }
+
+    private void FormMain_Load(object sender, EventArgs e)
+    {
+      LoadPasswordLengthComboBox();
+    }
+
+    private void LoadPasswordLengthComboBox()
+    {
+      comboBoxPasswordLength.Items.Clear();
+      for (int i = 5; i < 129; i++)
+      {
+        comboBoxPasswordLength.Items.Add(i);
+      }
+
+      comboBoxPasswordLength.Items.Add(256);
+      comboBoxPasswordLength.Items.Add(512);
+      comboBoxPasswordLength.Items.Add(1024);
+      comboBoxPasswordLength.Items.Add(2048);
+      comboBoxPasswordLength.SelectedIndex = 0;
+    }
   }
 }
