@@ -62,12 +62,20 @@
       this.labelPassordLength = new System.Windows.Forms.Label();
       this.comboBoxPasswordLength = new System.Windows.Forms.ComboBox();
       this.checkBoxIncludeSymbols = new System.Windows.Forms.CheckBox();
-      this.button1 = new System.Windows.Forms.Button();
-      this.textBox1 = new System.Windows.Forms.TextBox();
-      this.button2 = new System.Windows.Forms.Button();
+      this.buttonGeneratePassword = new System.Windows.Forms.Button();
+      this.textBoxPasswordGenerated = new System.Windows.Forms.TextBox();
+      this.buttonCopyToClipBoard = new System.Windows.Forms.Button();
       this.labelIncludeSymbols = new System.Windows.Forms.Label();
-      this.label1 = new System.Windows.Forms.Label();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.labelIncludeNumbers = new System.Windows.Forms.Label();
+      this.checkBoxIncludeNumbers = new System.Windows.Forms.CheckBox();
+      this.labelIncludeLowerCase = new System.Windows.Forms.Label();
+      this.checkBoxIncludeLowerCase = new System.Windows.Forms.CheckBox();
+      this.labelIncludeUpperCase = new System.Windows.Forms.Label();
+      this.checkBoxIncludeUpperCase = new System.Windows.Forms.CheckBox();
+      this.labelExcludeSimilarCharacters = new System.Windows.Forms.Label();
+      this.checkBoxExcludeSimilarCharacters = new System.Windows.Forms.CheckBox();
+      this.labelExcludeAmbiguousCharacters = new System.Windows.Forms.Label();
+      this.checkBoxExcludeAmbiguousCharacters = new System.Windows.Forms.CheckBox();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -320,7 +328,7 @@
       // comboBoxPasswordLength
       // 
       this.comboBoxPasswordLength.FormattingEnabled = true;
-      this.comboBoxPasswordLength.Location = new System.Drawing.Point(249, 43);
+      this.comboBoxPasswordLength.Location = new System.Drawing.Point(255, 43);
       this.comboBoxPasswordLength.Name = "comboBoxPasswordLength";
       this.comboBoxPasswordLength.Size = new System.Drawing.Size(121, 21);
       this.comboBoxPasswordLength.TabIndex = 2;
@@ -329,37 +337,42 @@
       // 
       this.checkBoxIncludeSymbols.AutoSize = true;
       this.checkBoxIncludeSymbols.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxIncludeSymbols.Location = new System.Drawing.Point(249, 86);
+      this.checkBoxIncludeSymbols.Location = new System.Drawing.Point(255, 86);
       this.checkBoxIncludeSymbols.Name = "checkBoxIncludeSymbols";
       this.checkBoxIncludeSymbols.Size = new System.Drawing.Size(168, 21);
       this.checkBoxIncludeSymbols.TabIndex = 3;
       this.checkBoxIncludeSymbols.Text = "( par exemple, @#$%)";
       this.checkBoxIncludeSymbols.UseVisualStyleBackColor = true;
       // 
-      // button1
+      // buttonGeneratePassword
       // 
-      this.button1.Location = new System.Drawing.Point(249, 245);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(75, 23);
-      this.button1.TabIndex = 4;
-      this.button1.Text = "button1";
-      this.button1.UseVisualStyleBackColor = true;
+      this.buttonGeneratePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonGeneratePassword.Location = new System.Drawing.Point(255, 210);
+      this.buttonGeneratePassword.Name = "buttonGeneratePassword";
+      this.buttonGeneratePassword.Size = new System.Drawing.Size(185, 23);
+      this.buttonGeneratePassword.TabIndex = 4;
+      this.buttonGeneratePassword.Text = "Créer un mot de passe";
+      this.buttonGeneratePassword.UseVisualStyleBackColor = true;
+      this.buttonGeneratePassword.Click += new System.EventHandler(this.ButtonGeneratePassword_Click);
       // 
-      // textBox1
+      // textBoxPasswordGenerated
       // 
-      this.textBox1.Location = new System.Drawing.Point(249, 285);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(100, 20);
-      this.textBox1.TabIndex = 5;
+      this.textBoxPasswordGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxPasswordGenerated.Location = new System.Drawing.Point(255, 239);
+      this.textBoxPasswordGenerated.Name = "textBoxPasswordGenerated";
+      this.textBoxPasswordGenerated.Size = new System.Drawing.Size(274, 26);
+      this.textBoxPasswordGenerated.TabIndex = 5;
       // 
-      // button2
+      // buttonCopyToClipBoard
       // 
-      this.button2.Location = new System.Drawing.Point(249, 334);
-      this.button2.Name = "button2";
-      this.button2.Size = new System.Drawing.Size(75, 23);
-      this.button2.TabIndex = 6;
-      this.button2.Text = "button2";
-      this.button2.UseVisualStyleBackColor = true;
+      this.buttonCopyToClipBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonCopyToClipBoard.Location = new System.Drawing.Point(255, 271);
+      this.buttonCopyToClipBoard.Name = "buttonCopyToClipBoard";
+      this.buttonCopyToClipBoard.Size = new System.Drawing.Size(206, 25);
+      this.buttonCopyToClipBoard.TabIndex = 6;
+      this.buttonCopyToClipBoard.Text = "Copier dans le presse papier";
+      this.buttonCopyToClipBoard.UseVisualStyleBackColor = true;
+      this.buttonCopyToClipBoard.Click += new System.EventHandler(this.ButtonCopyToClipBoard_Click);
       // 
       // labelIncludeSymbols
       // 
@@ -371,38 +384,130 @@
       this.labelIncludeSymbols.TabIndex = 7;
       this.labelIncludeSymbols.Text = "Inclure des symboles :";
       // 
-      // label1
+      // labelIncludeNumbers
       // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(21, 116);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(148, 17);
-      this.label1.TabIndex = 9;
-      this.label1.Text = "Inclure des symboles :";
+      this.labelIncludeNumbers.AutoSize = true;
+      this.labelIncludeNumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelIncludeNumbers.Location = new System.Drawing.Point(21, 107);
+      this.labelIncludeNumbers.Name = "labelIncludeNumbers";
+      this.labelIncludeNumbers.Size = new System.Drawing.Size(144, 17);
+      this.labelIncludeNumbers.TabIndex = 9;
+      this.labelIncludeNumbers.Text = "Inclure des nombres :";
       // 
-      // checkBox1
+      // checkBoxIncludeNumbers
       // 
-      this.checkBox1.AutoSize = true;
-      this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBox1.Location = new System.Drawing.Point(249, 116);
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.Size = new System.Drawing.Size(168, 21);
-      this.checkBox1.TabIndex = 8;
-      this.checkBox1.Text = "( par exemple, @#$%)";
-      this.checkBox1.UseVisualStyleBackColor = true;
+      this.checkBoxIncludeNumbers.AutoSize = true;
+      this.checkBoxIncludeNumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxIncludeNumbers.Location = new System.Drawing.Point(255, 107);
+      this.checkBoxIncludeNumbers.Name = "checkBoxIncludeNumbers";
+      this.checkBoxIncludeNumbers.Size = new System.Drawing.Size(206, 21);
+      this.checkBoxIncludeNumbers.TabIndex = 8;
+      this.checkBoxIncludeNumbers.Text = "( par exemple, 1234567890)";
+      this.checkBoxIncludeNumbers.UseVisualStyleBackColor = true;
+      // 
+      // labelIncludeLowerCase
+      // 
+      this.labelIncludeLowerCase.AutoSize = true;
+      this.labelIncludeLowerCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelIncludeLowerCase.Location = new System.Drawing.Point(21, 128);
+      this.labelIncludeLowerCase.Name = "labelIncludeLowerCase";
+      this.labelIncludeLowerCase.Size = new System.Drawing.Size(230, 17);
+      this.labelIncludeLowerCase.TabIndex = 11;
+      this.labelIncludeLowerCase.Text = "Inclure des caractères minuscules :";
+      // 
+      // checkBoxIncludeLowerCase
+      // 
+      this.checkBoxIncludeLowerCase.AutoSize = true;
+      this.checkBoxIncludeLowerCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxIncludeLowerCase.Location = new System.Drawing.Point(255, 128);
+      this.checkBoxIncludeLowerCase.Name = "checkBoxIncludeLowerCase";
+      this.checkBoxIncludeLowerCase.Size = new System.Drawing.Size(185, 21);
+      this.checkBoxIncludeLowerCase.TabIndex = 10;
+      this.checkBoxIncludeLowerCase.Text = "( par exemple, abcdefgh)";
+      this.checkBoxIncludeLowerCase.UseVisualStyleBackColor = true;
+      // 
+      // labelIncludeUpperCase
+      // 
+      this.labelIncludeUpperCase.AutoSize = true;
+      this.labelIncludeUpperCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelIncludeUpperCase.Location = new System.Drawing.Point(21, 145);
+      this.labelIncludeUpperCase.Name = "labelIncludeUpperCase";
+      this.labelIncludeUpperCase.Size = new System.Drawing.Size(230, 17);
+      this.labelIncludeUpperCase.TabIndex = 13;
+      this.labelIncludeUpperCase.Text = "Inclure des caractères majuscules :";
+      // 
+      // checkBoxIncludeUpperCase
+      // 
+      this.checkBoxIncludeUpperCase.AutoSize = true;
+      this.checkBoxIncludeUpperCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxIncludeUpperCase.Location = new System.Drawing.Point(255, 145);
+      this.checkBoxIncludeUpperCase.Name = "checkBoxIncludeUpperCase";
+      this.checkBoxIncludeUpperCase.Size = new System.Drawing.Size(201, 21);
+      this.checkBoxIncludeUpperCase.TabIndex = 12;
+      this.checkBoxIncludeUpperCase.Text = "( par exemple, ABCDEFGH)";
+      this.checkBoxIncludeUpperCase.UseVisualStyleBackColor = true;
+      // 
+      // labelExcludeSimilarCharacters
+      // 
+      this.labelExcludeSimilarCharacters.AutoSize = true;
+      this.labelExcludeSimilarCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelExcludeSimilarCharacters.Location = new System.Drawing.Point(21, 162);
+      this.labelExcludeSimilarCharacters.Name = "labelExcludeSimilarCharacters";
+      this.labelExcludeSimilarCharacters.Size = new System.Drawing.Size(217, 17);
+      this.labelExcludeSimilarCharacters.TabIndex = 15;
+      this.labelExcludeSimilarCharacters.Text = "Exclure les caractères similaires :";
+      // 
+      // checkBoxExcludeSimilarCharacters
+      // 
+      this.checkBoxExcludeSimilarCharacters.AutoSize = true;
+      this.checkBoxExcludeSimilarCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxExcludeSimilarCharacters.Location = new System.Drawing.Point(255, 162);
+      this.checkBoxExcludeSimilarCharacters.Name = "checkBoxExcludeSimilarCharacters";
+      this.checkBoxExcludeSimilarCharacters.Size = new System.Drawing.Size(223, 21);
+      this.checkBoxExcludeSimilarCharacters.TabIndex = 14;
+      this.checkBoxExcludeSimilarCharacters.Text = "( par exemple, i, l, 1, L, o, O, 0)";
+      this.checkBoxExcludeSimilarCharacters.UseVisualStyleBackColor = true;
+      // 
+      // labelExcludeAmbiguousCharacters
+      // 
+      this.labelExcludeAmbiguousCharacters.AutoSize = true;
+      this.labelExcludeAmbiguousCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelExcludeAmbiguousCharacters.Location = new System.Drawing.Point(21, 179);
+      this.labelExcludeAmbiguousCharacters.Name = "labelExcludeAmbiguousCharacters";
+      this.labelExcludeAmbiguousCharacters.Size = new System.Drawing.Size(212, 17);
+      this.labelExcludeAmbiguousCharacters.TabIndex = 17;
+      this.labelExcludeAmbiguousCharacters.Text = "Exclure les caractères ambigus :";
+      // 
+      // checkBoxExcludeAmbiguousCharacters
+      // 
+      this.checkBoxExcludeAmbiguousCharacters.AutoSize = true;
+      this.checkBoxExcludeAmbiguousCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.checkBoxExcludeAmbiguousCharacters.Location = new System.Drawing.Point(255, 179);
+      this.checkBoxExcludeAmbiguousCharacters.Name = "checkBoxExcludeAmbiguousCharacters";
+      this.checkBoxExcludeAmbiguousCharacters.Size = new System.Drawing.Size(274, 21);
+      this.checkBoxExcludeAmbiguousCharacters.TabIndex = 16;
+      this.checkBoxExcludeAmbiguousCharacters.Text = "( par exemple, { } [ ] ( ) / \\ \' \" ~ , ; : . < >)";
+      this.checkBoxExcludeAmbiguousCharacters.UseVisualStyleBackColor = true;
       // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
-      this.Controls.Add(this.label1);
-      this.Controls.Add(this.checkBox1);
+      this.Controls.Add(this.labelExcludeAmbiguousCharacters);
+      this.Controls.Add(this.checkBoxExcludeAmbiguousCharacters);
+      this.Controls.Add(this.labelExcludeSimilarCharacters);
+      this.Controls.Add(this.checkBoxExcludeSimilarCharacters);
+      this.Controls.Add(this.labelIncludeUpperCase);
+      this.Controls.Add(this.checkBoxIncludeUpperCase);
+      this.Controls.Add(this.labelIncludeLowerCase);
+      this.Controls.Add(this.checkBoxIncludeLowerCase);
+      this.Controls.Add(this.labelIncludeNumbers);
+      this.Controls.Add(this.checkBoxIncludeNumbers);
       this.Controls.Add(this.labelIncludeSymbols);
-      this.Controls.Add(this.button2);
-      this.Controls.Add(this.textBox1);
-      this.Controls.Add(this.button1);
+      this.Controls.Add(this.buttonCopyToClipBoard);
+      this.Controls.Add(this.textBoxPasswordGenerated);
+      this.Controls.Add(this.buttonGeneratePassword);
       this.Controls.Add(this.checkBoxIncludeSymbols);
       this.Controls.Add(this.comboBoxPasswordLength);
       this.Controls.Add(this.labelPassordLength);
@@ -453,12 +558,20 @@
     private System.Windows.Forms.Label labelPassordLength;
     private System.Windows.Forms.ComboBox comboBoxPasswordLength;
     private System.Windows.Forms.CheckBox checkBoxIncludeSymbols;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.TextBox textBox1;
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button buttonGeneratePassword;
+    private System.Windows.Forms.TextBox textBoxPasswordGenerated;
+    private System.Windows.Forms.Button buttonCopyToClipBoard;
     private System.Windows.Forms.Label labelIncludeSymbols;
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.Label labelIncludeNumbers;
+    private System.Windows.Forms.CheckBox checkBoxIncludeNumbers;
+    private System.Windows.Forms.Label labelIncludeLowerCase;
+    private System.Windows.Forms.CheckBox checkBoxIncludeLowerCase;
+    private System.Windows.Forms.Label labelIncludeUpperCase;
+    private System.Windows.Forms.CheckBox checkBoxIncludeUpperCase;
+    private System.Windows.Forms.Label labelExcludeSimilarCharacters;
+    private System.Windows.Forms.CheckBox checkBoxExcludeSimilarCharacters;
+    private System.Windows.Forms.Label labelExcludeAmbiguousCharacters;
+    private System.Windows.Forms.CheckBox checkBoxExcludeAmbiguousCharacters;
   }
 }
 

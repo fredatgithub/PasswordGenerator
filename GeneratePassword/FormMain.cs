@@ -41,5 +41,18 @@ namespace GeneratePassword
       comboBoxPasswordLength.Items.Add(2048);
       comboBoxPasswordLength.SelectedIndex = 0;
     }
+
+    private void ButtonGeneratePassword_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ButtonCopyToClipBoard_Click(object sender, EventArgs e)
+    {
+      if (string.IsNullOrEmpty(textBoxPasswordGenerated.Text))
+      {
+        Clipboard.SetText(textBoxPasswordGenerated.Text);
+      }
+    }
   }
 }
