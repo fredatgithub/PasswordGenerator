@@ -43,9 +43,79 @@ namespace GeneratePassword
       comboBoxPasswordLength.SelectedIndex = 0;
     }
 
+    public static string GetAlphabetLowerCase()
+    {
+      return "abcdefghijklmnopqrstuvwxyz";
+    }
+
+    public static string GetAlphabetUpperCase()
+    {
+      return GetAlphabetLowerCase().ToUpper();
+    }
+
+    public static string GetAllNumbers()
+    {
+      return "0123456789";
+    }
+
+    public static string GetAllSymbols()
+    {
+      return "@#$%";
+    }
+
+    public static string GetAmbiguousCharacters()
+    {
+      return "{}[]()/\\'\"~,;:.<>)";
+    }
+
+    public static string GetSimilarCharacters()
+    {
+      return "il1LoO0";
+    }
+
+    public static string GetSelectedCharacters(bool includeLowercase, bool includeUppercase, bool includeNumbers, bool includeSymbols, bool includeAmbiguousCharacters)
+    {
+      string result = string.Empty;
+      if (includeLowercase)
+      {
+        result += GetAlphabetLowerCase();
+      }
+
+      if (includeUppercase)
+      {
+        result += GetAlphabetUpperCase();
+      }
+
+      if (includeNumbers)
+      {
+        result += GetAllNumbers();
+      }
+
+      if (includeSymbols)
+      {
+        result += GetAllSymbols();
+      }
+
+      if (includeAmbiguousCharacters)
+      {
+        result += GetAmbiguousCharacters();
+      }
+
+      return result;
+    }
+
+
     private void ButtonGeneratePassword_Click(object sender, EventArgs e)
     {
-      string result = GenerateRandomcharacters((int)comboBoxPasswordLength.SelectedItem, checkBoxIncludeSymbols.Checked, checkBoxIncludeNumbers.Checked, checkBoxIncludeLowerCase.Checked, checkBoxIncludeUpperCase.Checked, checkBoxExcludeSimilarCharacters.Checked, checkBoxExcludeAmbiguousCharacters.Checked);
+      string result = string.Empty;
+      if (!checkBoxIncludeLowerCase.Checked && !checkBoxIncludeUpperCase.Checked && !checkBoxIncludeNumbers.Checked && !checkBoxIncludeSymbols.Checked)
+      {
+        MessageBox.Show("Vous devez cocher au moins une case nombres, minuscules, majuscules ou symboles");
+        textBoxPasswordGenerated.Text = result;
+        return;
+      }
+
+      result = GenerateRandomcharacters((int)comboBoxPasswordLength.SelectedItem, checkBoxIncludeSymbols.Checked, checkBoxIncludeNumbers.Checked, checkBoxIncludeLowerCase.Checked, checkBoxIncludeUpperCase.Checked, checkBoxExcludeSimilarCharacters.Checked, checkBoxExcludeAmbiguousCharacters.Checked);
       textBoxPasswordGenerated.Text = result;
     }
 
