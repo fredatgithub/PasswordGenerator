@@ -45,16 +45,20 @@ namespace GeneratePassword
 
     private void ButtonGeneratePassword_Click(object sender, EventArgs e)
     {
-      string result = string.Empty;
-      result = GenerateRandomcharacters();
+      string result = GenerateRandomcharacters((int)comboBoxPasswordLength.SelectedItem, checkBoxIncludeSymbols.Checked, checkBoxIncludeNumbers.Checked, checkBoxIncludeLowerCase.Checked, checkBoxIncludeUpperCase.Checked, checkBoxExcludeSimilarCharacters.Checked, checkBoxExcludeAmbiguousCharacters.Checked);
       textBoxPasswordGenerated.Text = result;
     }
 
-    private string GenerateRandomcharacters()
+    private string GenerateRandomcharacters(int numberOfcharacters, bool includeSymbols, bool includeNumbers, bool includeLowerCase, bool includeUppercase, bool excludeSimilarCharacters, bool excludeAmbiguousCharacters)
     {
       string result = string.Empty;
+      // TODO add code
+      for (int i = 1; i <= numberOfcharacters; i++)
+      {
+        result += GenerateOneRandomCharacter(includeLowerCase);
+      }
 
-      return result;
+      return result;  
     }
 
     private void ButtonCopyToClipBoard_Click(object sender, EventArgs e)
@@ -92,9 +96,8 @@ namespace GeneratePassword
 
     public static string GenerateOneRandomCharacter(bool lowercase = true)
     {
-      string result = string.Empty;
       int charNumber = GenerateRandomNumber(65, 65 + 26);
-      result = ((char)charNumber).ToString();
+      string result = ((char)charNumber).ToString();
       result = ToUpperOrLowercase(result, lowercase);
       return result;
     }
