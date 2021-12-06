@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GeneratePassword
@@ -73,6 +69,16 @@ namespace GeneratePassword
       return "il1LoO0";
     }
 
+    public static string RemoveSymbolsFromAString(string theString)
+    {
+      string result = new string((from c in theString
+                                  where char.IsWhiteSpace(c) || char.IsLetterOrDigit(c)
+                                  select c
+             ).ToArray());
+
+      return result;
+    }
+
     public static string GetSelectedCharacters(bool includeLowercase, bool includeUppercase, bool includeNumbers, bool includeSymbols, bool includeAmbiguousCharacters)
     {
       string result = string.Empty;
@@ -123,12 +129,62 @@ namespace GeneratePassword
     {
       string result = string.Empty;
       // TODO add code
+      string candidateCharacters = GenerateCharacters(includeSymbols, includeNumbers, includeLowerCase, includeUppercase, excludeSimilarCharacters, excludeAmbiguousCharacters);
+
       for (int i = 1; i <= numberOfcharacters; i++)
       {
         result += GenerateOneRandomCharacter(includeLowerCase);
       }
 
-      return result;  
+      return result;
+    }
+
+    public static string GenerateCharacters(bool includeSymbols, bool includeNumbers, bool includeLowerCase, bool includeUppercase, bool excludeSimilarCharacters, bool excludeAmbiguousCharacters)
+    {
+      string result = string.Empty;
+      if (includeSymbols)
+      {
+        result += GetAllSymbols();
+      }
+
+      if (includeNumbers)
+      {
+        result += GetAllNumbers();
+      }
+
+      if (includeLowerCase)
+      {
+        result += GetAlphabetLowerCase();
+      }
+
+      if (includeUppercase)
+      {
+        result += GetAlphabetUpperCase();
+      }
+
+      if (excludeAmbiguousCharacters)
+      {
+        result = RemoveCharacters(result, GetAmbiguousCharacters());
+      }
+
+      if (excludeSimilarCharacters)
+      {
+        result = RemoveCharacters(result, GetSimilarCharacters());
+      }
+
+
+      return result;
+    }
+
+    public static string RemoveCharacters(string theString, string characterstoBeRemoved)
+    {
+      string result = theString;
+      foreach (var oneCharactertoBeRemoved in characterstoBeRemoved)
+      {
+        result = result.Replace(oneCharactertoBeRemoved.ToString(), "");
+      }
+
+      return result;
     }
 
     private void ButtonCopyToClipBoard_Click(object sender, EventArgs e)
@@ -194,6 +250,39 @@ namespace GeneratePassword
       } while (result < min || result > max);
 
       return result;
+    }
+
+    /// <summary>
+    /// Returns a copy of the original string containing only the set of whitelisted characters.
+    /// </summary>
+    /// <param name="value">The string that will be copied and scrubbed.</param>
+    /// <param name="alphas">If true, all alphabetical characters (a-zA-Z) will be preserved; otherwise, they will be removed.</param>
+    /// <param name="numerics">If true, all alphabetical characters (a-zA-Z) will be preserved; otherwise, they will be removed.</param>
+    /// <param name="dashes">If true, all alphabetical characters (a-zA-Z) will be preserved; otherwise, they will be removed.</param>
+    /// <param name="underlines">If true, all alphabetical characters (a-zA-Z) will be preserved; otherwise, they will be removed.</param>
+    /// <param name="spaces">If true, all alphabetical characters (a-zA-Z) will be preserved; otherwise, they will be removed.</param>
+    /// <param name="periods">If true, all decimal characters (".") will be preserved; otherwise, they will be removed.</param>
+    public static string RemoveExcept(string value, bool alphas = false, bool numerics = false, bool dashes = false, bool underlines = false, bool spaces = false, bool periods = false)
+    {
+      if (string.IsNullOrWhiteSpace(value)) return value;
+      if (new[] { alphas, numerics, dashes, underlines, spaces, periods }.All(x => x == false)) return value;
+
+      var whitelistChars = new HashSet<char>(string.Concat(
+          alphas ? "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" : "",
+          numerics ? "0123456789" : "",
+          dashes ? "-" : "",
+          underlines ? "_" : "",
+          periods ? "." : "",
+          spaces ? " " : ""
+      ).ToCharArray());
+
+      var scrubbedValue = value.Aggregate(new StringBuilder(), (sb, @char) =>
+      {
+        if (whitelistChars.Contains(@char)) sb.Append(@char);
+        return sb;
+      }).ToString();
+
+      return scrubbedValue;
     }
   }
 }
