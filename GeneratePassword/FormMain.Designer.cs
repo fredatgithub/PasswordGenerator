@@ -88,7 +88,7 @@
             this.aideToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(580, 24);
       this.menuStrip1.TabIndex = 0;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -327,6 +327,7 @@
       // 
       // comboBoxPasswordLength
       // 
+      this.comboBoxPasswordLength.BackColor = System.Drawing.SystemColors.ActiveCaption;
       this.comboBoxPasswordLength.FormattingEnabled = true;
       this.comboBoxPasswordLength.Location = new System.Drawing.Point(255, 43);
       this.comboBoxPasswordLength.Name = "comboBoxPasswordLength";
@@ -346,10 +347,10 @@
       // 
       // buttonGeneratePassword
       // 
-      this.buttonGeneratePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonGeneratePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonGeneratePassword.Location = new System.Drawing.Point(255, 210);
       this.buttonGeneratePassword.Name = "buttonGeneratePassword";
-      this.buttonGeneratePassword.Size = new System.Drawing.Size(185, 23);
+      this.buttonGeneratePassword.Size = new System.Drawing.Size(185, 25);
       this.buttonGeneratePassword.TabIndex = 4;
       this.buttonGeneratePassword.Text = "Créer un mot de passe";
       this.buttonGeneratePassword.UseVisualStyleBackColor = true;
@@ -357,15 +358,15 @@
       // 
       // textBoxPasswordGenerated
       // 
-      this.textBoxPasswordGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxPasswordGenerated.Location = new System.Drawing.Point(255, 239);
+      this.textBoxPasswordGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxPasswordGenerated.Location = new System.Drawing.Point(24, 239);
       this.textBoxPasswordGenerated.Name = "textBoxPasswordGenerated";
-      this.textBoxPasswordGenerated.Size = new System.Drawing.Size(274, 26);
+      this.textBoxPasswordGenerated.Size = new System.Drawing.Size(505, 29);
       this.textBoxPasswordGenerated.TabIndex = 5;
       // 
       // buttonCopyToClipBoard
       // 
-      this.buttonCopyToClipBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonCopyToClipBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonCopyToClipBoard.Location = new System.Drawing.Point(255, 271);
       this.buttonCopyToClipBoard.Name = "buttonCopyToClipBoard";
       this.buttonCopyToClipBoard.Size = new System.Drawing.Size(206, 25);
@@ -493,7 +494,8 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(800, 450);
+      this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+      this.ClientSize = new System.Drawing.Size(580, 341);
       this.Controls.Add(this.labelExcludeAmbiguousCharacters);
       this.Controls.Add(this.checkBoxExcludeAmbiguousCharacters);
       this.Controls.Add(this.labelExcludeSimilarCharacters);
@@ -515,6 +517,7 @@
       this.MainMenuStrip = this.menuStrip1;
       this.Name = "FormMain";
       this.Text = "Password Generator";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
       this.Load += new System.EventHandler(this.FormMain_Load);
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();

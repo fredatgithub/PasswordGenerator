@@ -1,6 +1,9 @@
-﻿using System;
+﻿using GeneratePassword.Properties;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -22,6 +25,20 @@ namespace GeneratePassword
     private void FormMain_Load(object sender, EventArgs e)
     {
       LoadPasswordLengthComboBox();
+      DisplayTitle();
+      GetWindowValue();
+    }
+
+    private void DisplayTitle()
+    {
+      Text += GetApplicationTitle();
+    }
+
+    private static string GetApplicationTitle()
+    {
+      Assembly assembly = Assembly.GetExecutingAssembly();
+      FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+      return string.Format(" V{0}.{1}.{2}.{3}", fvi.FileMajorPart, fvi.FileMinorPart, fvi.FileBuildPart, fvi.FilePrivatePart);
     }
 
     private void LoadPasswordLengthComboBox()
@@ -283,6 +300,43 @@ namespace GeneratePassword
       }).ToString();
 
       return scrubbedValue;
+    }
+
+    private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      SaveWindowValue();
+    }
+
+    private void SaveWindowValue()
+    {
+      Settings.Default.checkBoxIncludeSymbols = checkBoxIncludeSymbols.Checked;
+      Settings.Default.checkBoxIncludeNumbers = checkBoxIncludeNumbers.Checked;
+      Settings.Default.checkBoxIncludeLowerCase = checkBoxIncludeLowerCase.Checked;
+      Settings.Default.checkBoxIncludeUpperCase = checkBoxIncludeUpperCase.Checked;
+      Settings.Default.checkBoxExcludeSimilarCharacters = checkBoxExcludeSimilarCharacters.Checked;
+      Settings.Default.checkBoxExcludeAmbiguousCharacters = checkBoxExcludeAmbiguousCharacters.Checked;
+      Settings.Default.comboBoxPasswordLengthIndex = comboBoxPasswordLength.SelectedIndex;
+      Settings.Default.WindowHeight = Height;
+      Settings.Default.WindowWidth = Width;
+      Settings.Default.WindowLeft = Left;
+      Settings.Default.WindowTop = Top;
+      Settings.Default.Save();
+    }
+
+    private void GetWindowValue()
+    {
+      Width = Settings.Default.WindowWidth;
+      Height = Settings.Default.WindowHeight;
+      Top = Settings.Default.WindowTop < 0 ? 0 : Settings.Default.WindowTop;
+      Left = Settings.Default.WindowLeft < 0 ? 0 : Settings.Default.WindowLeft;
+
+      checkBoxIncludeSymbols.Checked = Settings.Default.checkBoxIncludeSymbols;
+      checkBoxIncludeNumbers.Checked = Settings.Default.checkBoxIncludeNumbers;
+      checkBoxIncludeLowerCase.Checked = Settings.Default.checkBoxIncludeLowerCase;
+      checkBoxIncludeUpperCase.Checked = Settings.Default.checkBoxIncludeUpperCase;
+      checkBoxExcludeSimilarCharacters.Checked = Settings.Default.checkBoxExcludeSimilarCharacters;
+      checkBoxExcludeAmbiguousCharacters.Checked = Settings.Default.checkBoxExcludeAmbiguousCharacters;
+      comboBoxPasswordLength.SelectedIndex = Settings.Default.comboBoxPasswordLengthIndex;
     }
   }
 }
