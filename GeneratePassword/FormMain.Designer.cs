@@ -312,8 +312,9 @@
       // àproposdeToolStripMenuItem
       // 
       this.àproposdeToolStripMenuItem.Name = "àproposdeToolStripMenuItem";
-      this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.àproposdeToolStripMenuItem.Text = "À &propos de...";
+      this.àproposdeToolStripMenuItem.Click += new System.EventHandler(this.AproposdeToolStripMenuItem_Click);
       // 
       // labelPassordLength
       // 
@@ -341,17 +342,17 @@
       this.checkBoxIncludeSymbols.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.checkBoxIncludeSymbols.Location = new System.Drawing.Point(276, 86);
       this.checkBoxIncludeSymbols.Name = "checkBoxIncludeSymbols";
-      this.checkBoxIncludeSymbols.Size = new System.Drawing.Size(168, 21);
+      this.checkBoxIncludeSymbols.Size = new System.Drawing.Size(305, 21);
       this.checkBoxIncludeSymbols.TabIndex = 3;
-      this.checkBoxIncludeSymbols.Text = "( par exemple, @#$%)";
+      this.checkBoxIncludeSymbols.Text = "( par exemple, @#$% { } [ ] ( ) / , ; : . < > _ -)";
       this.checkBoxIncludeSymbols.UseVisualStyleBackColor = true;
       // 
       // buttonGeneratePassword
       // 
       this.buttonGeneratePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonGeneratePassword.Location = new System.Drawing.Point(276, 210);
+      this.buttonGeneratePassword.Location = new System.Drawing.Point(276, 206);
       this.buttonGeneratePassword.Name = "buttonGeneratePassword";
-      this.buttonGeneratePassword.Size = new System.Drawing.Size(185, 25);
+      this.buttonGeneratePassword.Size = new System.Drawing.Size(185, 29);
       this.buttonGeneratePassword.TabIndex = 4;
       this.buttonGeneratePassword.Text = "Créer un mot de passe";
       this.buttonGeneratePassword.UseVisualStyleBackColor = true;
@@ -372,7 +373,7 @@
       this.buttonCopyToClipBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonCopyToClipBoard.Location = new System.Drawing.Point(276, 271);
       this.buttonCopyToClipBoard.Name = "buttonCopyToClipBoard";
-      this.buttonCopyToClipBoard.Size = new System.Drawing.Size(206, 25);
+      this.buttonCopyToClipBoard.Size = new System.Drawing.Size(251, 34);
       this.buttonCopyToClipBoard.TabIndex = 6;
       this.buttonCopyToClipBoard.Text = "Copier dans le presse papier";
       this.buttonCopyToClipBoard.UseVisualStyleBackColor = true;
@@ -467,9 +468,9 @@
       this.checkBoxExcludeSimilarCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.checkBoxExcludeSimilarCharacters.Location = new System.Drawing.Point(276, 162);
       this.checkBoxExcludeSimilarCharacters.Name = "checkBoxExcludeSimilarCharacters";
-      this.checkBoxExcludeSimilarCharacters.Size = new System.Drawing.Size(223, 21);
+      this.checkBoxExcludeSimilarCharacters.Size = new System.Drawing.Size(196, 21);
       this.checkBoxExcludeSimilarCharacters.TabIndex = 14;
-      this.checkBoxExcludeSimilarCharacters.Text = "( par exemple, i, l, 1, L, o, O, 0)";
+      this.checkBoxExcludeSimilarCharacters.Text = "( par exemple: l, 1, o, O, 0)";
       this.checkBoxExcludeSimilarCharacters.UseVisualStyleBackColor = true;
       // 
       // labelExcludeAmbiguousCharacters
@@ -488,9 +489,9 @@
       this.checkBoxExcludeAmbiguousCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.checkBoxExcludeAmbiguousCharacters.Location = new System.Drawing.Point(276, 179);
       this.checkBoxExcludeAmbiguousCharacters.Name = "checkBoxExcludeAmbiguousCharacters";
-      this.checkBoxExcludeAmbiguousCharacters.Size = new System.Drawing.Size(274, 21);
+      this.checkBoxExcludeAmbiguousCharacters.Size = new System.Drawing.Size(158, 21);
       this.checkBoxExcludeAmbiguousCharacters.TabIndex = 16;
-      this.checkBoxExcludeAmbiguousCharacters.Text = "( par exemple, { } [ ] ( ) / \\ \' \" ~ , ; : . < >)";
+      this.checkBoxExcludeAmbiguousCharacters.Text = "( par exemple, \\ \' \" ~)";
       this.checkBoxExcludeAmbiguousCharacters.UseVisualStyleBackColor = true;
       // 
       // FormMain

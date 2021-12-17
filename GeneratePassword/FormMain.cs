@@ -31,10 +31,10 @@ namespace GeneratePassword
 
     private void DisplayTitle()
     {
-      Text += GetApplicationTitle();
+      Text += GetApplicationVersion();
     }
 
-    private static string GetApplicationTitle()
+    private static string GetApplicationVersion()
     {
       Assembly assembly = Assembly.GetExecutingAssembly();
       FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
@@ -73,17 +73,17 @@ namespace GeneratePassword
 
     public static string GetAllSymbols()
     {
-      return "@#$%";
+      return "@#$%}[]()/,;:.<>_-";
     }
 
     public static string GetAmbiguousCharacters()
     {
-      return "{}[]()/\\'\"~,;:.<>)";
+      return "\\'\"~";
     }
 
     public static string GetSimilarCharacters()
     {
-      return "il1LoO0";
+      return "l1oO0";
     }
 
     public static string RemoveSymbolsFromAString(string theString)
@@ -96,7 +96,7 @@ namespace GeneratePassword
       return result;
     }
 
-    public static string GetSelectedCharacters(bool includeLowercase, bool includeUppercase, bool includeNumbers, bool includeSymbols, bool includeAmbiguousCharacters)
+    public static string GetSelectedCharacters(bool includeLowercase, bool includeUppercase, bool includeNumbers, bool includeSymbols, bool includeAmbiguousCharacters, bool excludeAmbiguousCharacters = false)
     {
       string result = string.Empty;
       if (includeLowercase)
@@ -119,14 +119,13 @@ namespace GeneratePassword
         result += GetAllSymbols();
       }
 
-      if (includeAmbiguousCharacters)
+      if (includeAmbiguousCharacters && !excludeAmbiguousCharacters)
       {
         result += GetAmbiguousCharacters();
       }
 
       return result;
     }
-
 
     private void ButtonGeneratePassword_Click(object sender, EventArgs e)
     {
@@ -175,7 +174,7 @@ namespace GeneratePassword
       {
         result += GetAllNumbers();
       }
-
+            
       if (includeLowerCase)
       {
         result += GetAlphabetLowerCase();
@@ -186,16 +185,19 @@ namespace GeneratePassword
         result += GetAlphabetUpperCase();
       }
 
+      if (excludeSimilarCharacters)
+      {
+        string similarcharacters = GetSimilarCharacters();
+        for (int i = 0; i < similarcharacters.Length; i++)
+        {
+          result = result.Replace(similarcharacters[i].ToString(), string.Empty);
+        }
+      }
+
       if (excludeAmbiguousCharacters)
       {
         result = RemoveCharacters(result, GetAmbiguousCharacters());
       }
-
-      if (excludeSimilarCharacters)
-      {
-        result = RemoveCharacters(result, GetSimilarCharacters());
-      }
-
 
       return result;
     }
@@ -213,9 +215,13 @@ namespace GeneratePassword
 
     private void ButtonCopyToClipBoard_Click(object sender, EventArgs e)
     {
-      if (string.IsNullOrEmpty(textBoxPasswordGenerated.Text))
+      if (!string.IsNullOrEmpty(textBoxPasswordGenerated.Text))
       {
         Clipboard.SetText(textBoxPasswordGenerated.Text);
+      }
+      else
+      {
+        MessageBox.Show("There is nothing to copy from.", "Warning");
       }
     }
 
@@ -344,6 +350,12 @@ namespace GeneratePassword
       checkBoxExcludeSimilarCharacters.Checked = Settings.Default.checkBoxExcludeSimilarCharacters;
       checkBoxExcludeAmbiguousCharacters.Checked = Settings.Default.checkBoxExcludeAmbiguousCharacters;
       comboBoxPasswordLength.SelectedIndex = Settings.Default.comboBoxPasswordLengthIndex;
+    }
+
+    private void AproposdeToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      AboutBoxApplication aboutForm = new AboutBoxApplication();
+      aboutForm.ShowDialog();
     }
   }
 }
