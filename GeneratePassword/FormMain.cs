@@ -150,10 +150,17 @@ namespace GeneratePassword
 
       for (int i = 1; i <= numberOfcharacters; i++)
       {
-        result += GenerateOneRandomCharacter(includeLowerCase);
+        result += GenerateOneRandomCharacterWithList(candidateCharacters);
       }
 
       return result;
+    }
+
+    private string GenerateOneRandomCharacterWithList(string candidateCharacters)
+    {
+      int charNumber = GenerateRandomNumber(0, candidateCharacters.Length - 1);
+      string oneCharacter = candidateCharacters[charNumber].ToString();
+      return oneCharacter;
     }
 
     public static string GenerateCharacters(bool includeSymbols, bool includeNumbers, bool includeLowerCase, bool includeUppercase, bool excludeSimilarCharacters, bool excludeAmbiguousCharacters)
