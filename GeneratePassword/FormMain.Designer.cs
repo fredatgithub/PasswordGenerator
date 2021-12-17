@@ -88,7 +88,7 @@
             this.aideToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Size = new System.Drawing.Size(580, 24);
+      this.menuStrip1.Size = new System.Drawing.Size(622, 24);
       this.menuStrip1.TabIndex = 0;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -265,13 +265,13 @@
       // personnaliserToolStripMenuItem
       // 
       this.personnaliserToolStripMenuItem.Name = "personnaliserToolStripMenuItem";
-      this.personnaliserToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.personnaliserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.personnaliserToolStripMenuItem.Text = "&Personnaliser";
       // 
       // optionsToolStripMenuItem
       // 
       this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-      this.optionsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.optionsToolStripMenuItem.Text = "&Options";
       // 
       // aideToolStripMenuItem
@@ -289,25 +289,25 @@
       // sommaireToolStripMenuItem
       // 
       this.sommaireToolStripMenuItem.Name = "sommaireToolStripMenuItem";
-      this.sommaireToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.sommaireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.sommaireToolStripMenuItem.Text = "&Sommaire";
       // 
       // indexToolStripMenuItem
       // 
       this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-      this.indexToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.indexToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.indexToolStripMenuItem.Text = "&Index";
       // 
       // rechercherToolStripMenuItem
       // 
       this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-      this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.rechercherToolStripMenuItem.Text = "&Rechercher";
       // 
       // toolStripSeparator5
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
-      this.toolStripSeparator5.Size = new System.Drawing.Size(144, 6);
+      this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
       // 
       // àproposdeToolStripMenuItem
       // 
@@ -350,7 +350,7 @@
       // buttonGeneratePassword
       // 
       this.buttonGeneratePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonGeneratePassword.Location = new System.Drawing.Point(276, 206);
+      this.buttonGeneratePassword.Location = new System.Drawing.Point(276, 239);
       this.buttonGeneratePassword.Name = "buttonGeneratePassword";
       this.buttonGeneratePassword.Size = new System.Drawing.Size(185, 29);
       this.buttonGeneratePassword.TabIndex = 4;
@@ -363,15 +363,15 @@
       this.textBoxPasswordGenerated.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.textBoxPasswordGenerated.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxPasswordGenerated.Location = new System.Drawing.Point(24, 239);
+      this.textBoxPasswordGenerated.Location = new System.Drawing.Point(24, 272);
       this.textBoxPasswordGenerated.Name = "textBoxPasswordGenerated";
-      this.textBoxPasswordGenerated.Size = new System.Drawing.Size(544, 29);
+      this.textBoxPasswordGenerated.Size = new System.Drawing.Size(586, 29);
       this.textBoxPasswordGenerated.TabIndex = 5;
       // 
       // buttonCopyToClipBoard
       // 
       this.buttonCopyToClipBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonCopyToClipBoard.Location = new System.Drawing.Point(276, 271);
+      this.buttonCopyToClipBoard.Location = new System.Drawing.Point(276, 304);
       this.buttonCopyToClipBoard.Name = "buttonCopyToClipBoard";
       this.buttonCopyToClipBoard.Size = new System.Drawing.Size(251, 34);
       this.buttonCopyToClipBoard.TabIndex = 6;
@@ -435,7 +435,7 @@
       // 
       this.labelIncludeUpperCase.AutoSize = true;
       this.labelIncludeUpperCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelIncludeUpperCase.Location = new System.Drawing.Point(21, 145);
+      this.labelIncludeUpperCase.Location = new System.Drawing.Point(21, 149);
       this.labelIncludeUpperCase.Name = "labelIncludeUpperCase";
       this.labelIncludeUpperCase.Size = new System.Drawing.Size(230, 17);
       this.labelIncludeUpperCase.TabIndex = 13;
@@ -445,7 +445,7 @@
       // 
       this.checkBoxIncludeUpperCase.AutoSize = true;
       this.checkBoxIncludeUpperCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxIncludeUpperCase.Location = new System.Drawing.Point(276, 145);
+      this.checkBoxIncludeUpperCase.Location = new System.Drawing.Point(276, 149);
       this.checkBoxIncludeUpperCase.Name = "checkBoxIncludeUpperCase";
       this.checkBoxIncludeUpperCase.Size = new System.Drawing.Size(201, 21);
       this.checkBoxIncludeUpperCase.TabIndex = 12;
@@ -456,7 +456,7 @@
       // 
       this.labelExcludeSimilarCharacters.AutoSize = true;
       this.labelExcludeSimilarCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelExcludeSimilarCharacters.Location = new System.Drawing.Point(21, 162);
+      this.labelExcludeSimilarCharacters.Location = new System.Drawing.Point(21, 170);
       this.labelExcludeSimilarCharacters.Name = "labelExcludeSimilarCharacters";
       this.labelExcludeSimilarCharacters.Size = new System.Drawing.Size(252, 17);
       this.labelExcludeSimilarCharacters.TabIndex = 15;
@@ -466,7 +466,7 @@
       // 
       this.checkBoxExcludeSimilarCharacters.AutoSize = true;
       this.checkBoxExcludeSimilarCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxExcludeSimilarCharacters.Location = new System.Drawing.Point(276, 162);
+      this.checkBoxExcludeSimilarCharacters.Location = new System.Drawing.Point(276, 170);
       this.checkBoxExcludeSimilarCharacters.Name = "checkBoxExcludeSimilarCharacters";
       this.checkBoxExcludeSimilarCharacters.Size = new System.Drawing.Size(196, 21);
       this.checkBoxExcludeSimilarCharacters.TabIndex = 14;
@@ -477,7 +477,7 @@
       // 
       this.labelExcludeAmbiguousCharacters.AutoSize = true;
       this.labelExcludeAmbiguousCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelExcludeAmbiguousCharacters.Location = new System.Drawing.Point(21, 179);
+      this.labelExcludeAmbiguousCharacters.Location = new System.Drawing.Point(21, 191);
       this.labelExcludeAmbiguousCharacters.Name = "labelExcludeAmbiguousCharacters";
       this.labelExcludeAmbiguousCharacters.Size = new System.Drawing.Size(244, 17);
       this.labelExcludeAmbiguousCharacters.TabIndex = 17;
@@ -487,7 +487,7 @@
       // 
       this.checkBoxExcludeAmbiguousCharacters.AutoSize = true;
       this.checkBoxExcludeAmbiguousCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.checkBoxExcludeAmbiguousCharacters.Location = new System.Drawing.Point(276, 179);
+      this.checkBoxExcludeAmbiguousCharacters.Location = new System.Drawing.Point(276, 191);
       this.checkBoxExcludeAmbiguousCharacters.Name = "checkBoxExcludeAmbiguousCharacters";
       this.checkBoxExcludeAmbiguousCharacters.Size = new System.Drawing.Size(158, 21);
       this.checkBoxExcludeAmbiguousCharacters.TabIndex = 16;
@@ -499,7 +499,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-      this.ClientSize = new System.Drawing.Size(580, 317);
+      this.ClientSize = new System.Drawing.Size(622, 360);
       this.Controls.Add(this.labelExcludeAmbiguousCharacters);
       this.Controls.Add(this.checkBoxExcludeAmbiguousCharacters);
       this.Controls.Add(this.labelExcludeSimilarCharacters);
