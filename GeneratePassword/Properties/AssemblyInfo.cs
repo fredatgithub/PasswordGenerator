@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("GeneratePassword")]
-[assembly: AssemblyDescription("Generate a password with several criterias")]
+[assembly: AssemblyDescription("Generate a password with several criteria")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Freddy Juhel")]
 [assembly: AssemblyProduct("GeneratePassword")]
