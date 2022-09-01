@@ -174,7 +174,7 @@ namespace GeneratePassword
       {
         result += GetAllNumbers();
       }
-            
+
       if (includeLowerCase)
       {
         result += GetAlphabetLowerCase();
