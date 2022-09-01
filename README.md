@@ -1,5 +1,5 @@
 # PasswordGenerator
-this is a .NET Framework 4.8 Winform application that generates a password
+This is a .NET Framework 4.8 Winform application that generates a password
 
 Here is the application:
 
