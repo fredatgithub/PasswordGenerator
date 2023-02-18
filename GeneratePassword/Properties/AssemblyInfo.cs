@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Freddy Juhel")]
 [assembly: AssemblyProduct("GeneratePassword")]
-[assembly: AssemblyCopyright("Copyright ©  2021 MIT Freddy Juhel")]
+[assembly: AssemblyCopyright("Copyright ©  2021-2023 MIT Freddy Juhel")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
