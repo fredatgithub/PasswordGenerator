@@ -44,11 +44,13 @@ namespace GeneratePassword
     private void LoadPasswordLengthComboBox()
     {
       comboBoxPasswordLength.Items.Clear();
-      for (int i = 5; i < 129; i++)
+      for (int i = 5; i <= 135; i++)
       {
         comboBoxPasswordLength.Items.Add(i);
       }
 
+      comboBoxPasswordLength.Items.Add(254);
+      comboBoxPasswordLength.Items.Add(255);
       comboBoxPasswordLength.Items.Add(256);
       comboBoxPasswordLength.Items.Add(512);
       comboBoxPasswordLength.Items.Add(1024);
