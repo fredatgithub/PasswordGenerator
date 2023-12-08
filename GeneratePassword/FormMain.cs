@@ -206,7 +206,7 @@ namespace GeneratePassword
       string result = theString;
       foreach (var oneCharactertoBeRemoved in characterstoBeRemoved)
       {
-        result = result.Replace(oneCharactertoBeRemoved.ToString(), "");
+        result = result.Replace(oneCharactertoBeRemoved.ToString(), string.Empty);
       }
 
       return result;
